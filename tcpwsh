@@ -1,0 +1,10 @@
+
+#!/bin/bash
+
+# starts wireshark with input from fifo,
+# starts tcpdump which writes full lenght packets (binary data)
+# to stdout (-w -)
+
+wireshark -k -i <(sudo tcpdump -i eth0 -s 65535 -w -)
+
+
